@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome kit code-->
+   <script src="https://kit.fontawesome.com/11650525fa.js" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img src=".\big_screen_img\BG1.svg" alt="bigSvg" class="background-img">
+        <!--<video autoplay loop muted play-inline class="background-clip"></video>-->
+        <img class="background-clip clearFullHD" src=".\big_screen_img\clear.svg"  alt="">
+        <img  class="background-clip rainFullHD" src=".\big_screen_img\rain.svg" alt="" ></img>
+        <img class="background-clip snowFullHD" src=".\big_screen_img\snow.svg" alt=""></img>
+        <img class="background-clip cloudsFullHD" src=".\big_screen_img\clouds.svg" alt="" ></img>
+       <!-- <video autoplay loop muted play-inline class="defaultFullHD" src=".\videos\BGfullHD.mp4"  ></video>-->
+           
+        <!--src=".\videos\fullHDVideo5.mp4"-->
+        
+        <header class="main-header" id="mainHeader">
+            <article class="show-coordinates" id="showCoordinates"></article>
+            <!--err paragraphs-->
+            <p id="err1"></p><p id="err2"></p><p id="err3"></p><p id="err4"></p>
+        <!-------button to get geo location to get weather --------------------->
+            <button class="geo-location-btn" id="geoLocationBtn" type="submit">Get My Location
+                <span class="location-span"><i class="fa-solid fa-location-dot location-i"></i></span>
+            </button>
+            <br>
+           
+          <input type="text" class="input-place" id="inputPlace" placeholder="Type Location">
+            <button class="input-btn" id="inputBtn" type="submit">Weather</button>
+        </header>
+
+        <main class="main" id="main">
+            <section class="one-day-weather" id="oneDayWeather">
+                <!------------------show 1 day weather here--------------->
+            </section>
+
+            <section class="five-days-weather" id="fiveDaysWeather">
+                <!-----------------show 5 days weahter--------------------->
+            </section>
+        </main>
+
+       
+    
+    </div>
+
+
+
+    <script src="main.js"></script>
+    <script src="key.js"></script>
+</body>
+</html>
