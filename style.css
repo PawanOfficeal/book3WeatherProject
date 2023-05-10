@@ -4,191 +4,893 @@
     box-sizing: border-box;
 }
 
-.container{
-    position: relative;
+
+
+/*   ======================================  */
+
+
+
+/* *********************VERY BIG computer screen CSS `2560 PX`**************    */
+
+/*  media query for evry big screen laptops/pc >  2560px/16 =  (160 em )    */
+
+@media (max-width:160em){
+    .container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden; 
+        
+    }
+    
+    .main-header{
+        width: 100%;
+        height: 20%;
+    
+    }
+    .main{
+        
+        width: 100%;
+        
+    }
+    
+     /*big screen main page image */
+    .background-img{
+        
+        position: absolute;
+        margin-top: -8%;
+        display: block;
+    
+      min-width: 100%; 
+     min-height: 100%;
+    }
+    
+    .small-Screen-BG-img{
+        display: none;
+    }
+    
+    
+    .background-clip {
+        /*These Images Change According To Weather  , background svg imges style */
+      background-size: cover;
+       position: absolute;
+       top:0;
+      right: 0;
+     /* bottom: -4%; */
+      width: 100%; 
+      height: 100%;
+      display: block;
+    }  
+    
+    .x1{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        
+    }
+    
+    
+    
+    .cloudsFullHD , .clearFullHD , .rainFullHD , .snowFullHD , .thunderFullHD {
+        opacity: 0; 
+       height: 100%;
+        
+        
+        z-index: 0;
+        transition: 1s ease-in-out;
+    }
+    .rainFullHD{
+        opacity: 0; 
+        position: absolute;
+        height: auto;
+        width: 100%; 
+        min-height: 100%;
+        z-index: 0;
+        transition: 1s ease-in-out;
+    }
+    
+    
+    
+    .opacity1{opacity: 1;}
+    .main-header{
+          position: absolute;
+          
+          width: 100%;
+          height:20vh;
+          z-index:1;
+          
+    }
+    .geo-location-btn{
+              width: 20%;
+              height: 1.6rem;
+              border-radius: 4px;
+              border-style: none;
+              margin-left: 40%;
+              margin-top: 2%;
+              padding: 6px;
+              background-image: radial-gradient(blue,aquamarine);
+            opacity: 1;
+              color: white;
+              font-size: .8rem;
+              cursor: pointer;
+              word-spacing: 4px;
+              transition: .5s;
+             
+              
+    }
+    .geo-location-btn:hover{background-color: white;color:rgb(46, 10, 10);}
+    .location-span{
+       
+       
+        font-size: 1rem;
+        color: rgb(187, 87, 87);
+        display: inline-block;
+        
+        margin-left: 5%;
+    }
+    
+    .input-btn{
+        position:absolute;
+        width: 10%;
+        height: 1.8rem;
+        border-radius: 4px;
+        border-style: none;
+        background-color:rgb(69, 226, 226);
+        color: white;
+        margin-left: .5%;
+        margin-top: 2%;
+        cursor: pointer;
+        font-weight: bolder;
+        display: inline-block;
+    }
+    .input-btn:hover{background-color: aquamarine;color:rgb(37, 10, 10);}
+    .input-place{
+         width: 20%;
+         height: 1.8rem;
+         background-color: rgb(122, 207, 228);
+         border-style: none;
+         outline: none;
+         margin-left: 33%;
+         margin-top: 2%;
+         display: inline-block;
+         text-align: center;
+         font-weight: bold;
+    }
+    .one-day-weather{
+       /* background-image: radial-gradient(skyblue,rgb(179, 179, 228)); */
+        
+        width: 100%;
+        height: 25%;
+        margin-top: 1%;
+        opacity: 0.7;
+        
+    
+    }
+    .oneDayWeatherParaA , .oneDayWeatherParaB , .oneDayWeatherParaC{
+        position: relative;
+        color:rgb(39, 3, 10);
+        font-weight: bold;
+        width: 20%;
+        height: 1rem;
+        margin-left:40%;
+        text-align: center;
+        margin-top:.5rem;
+        
+        z-index: 3;
+    
+    }
+    .todayWeather1{
+        position: relative;
+        color:rgb(75, 180, 6);
+        font-weight: bolder;
+        width: 20%;
+        height: 1rem;
+        margin-left:40%;
+        text-align: center;
+        margin-top:.5rem;
+        
+        z-index: 3;
+        font-weight: bolder;
+    }
+    .oneDayWeatherParaB{
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: bold;
+        color:rgb(28, 4, 49);
+    }
+    .oneDayWeatherParaC{
+        font-size: .8rem;
+        font-style: italic;
+        font-weight: bold;
+        color:rgb(28, 4, 49);
+    }
+    .one-day-weather img{
+        position: absolute;
+        width: 20%;
+     /*   height: 40%;  */
+        margin-left:40%;
+        margin-top: 4px;
+        background-image: radial-gradient(skyblue,rgb(179, 179, 228));
+        border-radius:4px;
+        border-style: none;
+        z-index: 2;
+        padding: 10px;
+    }
+    .five-days-weather{
+     /* background-color: coral;  */
+     position: relative;
+      width: 100%;
+      height: 50%;
+      margin-top: 2%;
+      transition: 1s;
+    }
+    .five-days-weather img{
+        position: relative;
+        margin-top: 1rem;
+        
+    }
+    
+    .floatSpan , .floatSpan2{
+        position: relative;
+        float: left;
+        width: 15%;
+        height: 65%;
+        background-image: radial-gradient(bisque, rgb(231, 197, 240));
+        border-radius: 4px;
+        border-style: none;
+        margin-left:4%;
+        margin-top: 20%;
+        opacity: 0;
+        transition: all 3s ease-in-out;
+    }
+    */
+    .floatSpan , .floatSpan2{
+        float: left;
+        
+        width: 0;
+        height: 60%;
+        
+        background-image: radial-gradient(bisque, rgb(231, 197, 240)); 
+        border-radius: 4px;
+        border-style: none;
+        margin-left:1.8%;
+        margin-top: 15%;
+        opacity: 0;
+      transition: all 7s ease-in-out;
+    }
+    .floatSpanTransition{
+        opacity: 0.8;
+        
+        width: 18%;
+    }
+    .main-footer{
+        background-color: gray;
+        width: 100%;
+        height: .5rem;
+        margin-top: .5rem;
+        background-color: blue;
+    }
+    
+    /*5 days */
+    /*.svgStyleClass{
+        width: 70%;
+        margin-left: 15%;
+    } */
+    .svgStyleClass{
+        width: 70%;
+        height: 25%;
+        margin-left: 15%;
+    } 
+    
+    /*1 day */
+    .svgStyleClass2{
+        position:relative;
+        width: 100%;
+        margin-left:30% ;
+        height: 25%;
+        
+    }
+    .tempPara{
+        width: 40%;
+        color: rgb(126, 5, 65);
+        font-weight: bold;
+        font-style: oblique;
+        font-size: .8rem;
+        margin-left:30%;
+        margin-top: 2%;
+        text-align: center;
+    }
+    .weekDayPara{
+        font-size: 1.2rem;
+        color:rgb(49, 4, 4);
+        text-align: center;
+    } 
+    
+    .class0{
+        color:darkgreen;
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+    .hideGeoLocationBtn{
+        opacity: 0;
+        display: none;
+    }
+    .hideInputPlace , .hideInputBtn{
+        opacity: 0;
+        display: none;
+    }
+    .floatSpanTransition{
+        opacity: 0.8;
+    }
+    .oneMax{
+        width:20%;
+        margin-left:47%;
+        padding-top: 1rem;
+        font-weight: bolder;
+    }
+    .oneMin{
+        width: 20%;
+        margin-left: 1%;
+        padding-top: 1rem;
+        font-weight: bolder;
+    }
+    
+    .descriptionPara{
+        text-align: center;
+        font-size: .8rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-transform: capitalize;
+    }
+    
+
+}
+
+
+/*  ______________________________ Big Screen 1444 PX  ____________________      */
+/*   1444px/16 = 91 em        */
+@media (max-width:91em){
+    .container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .main-header{
     width: 100%;
-    height: 100vh;
+    height: 20%;
+    }
+    .main{
     
-    border: .5px solid white;
-    border-radius: 4px;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    width: 100%;
+    height: 100%;
+    border-bottom: 8px rgb(134, 162, 168);
+    }
+    
+    
+    .background-img{
+        
+        position: absolute;
+        margin-top: -8%;
+        display: block;
+    
+      min-width: 100%; 
+     min-height: 100%;
+    }
+    
+    .small-Screen-BG-img{
+        display: none;
+    }
+    .geo-location-btn{
+        background-color: none;
+        width: 50%;
+        margin-left: 25%;
+        padding: 6px;
+        height: 28%;
+        cursor: pointer;
+    }
+    .geo-location-btn:hover{
+        background-color: antiquewhite;
+        columns: rgb(17, 1, 1);
+        cursor:zoom-out;
+    }
+    .input-place{
+        width: 32%;
+        margin-left:25%;
+    }
+    .input-btn{
+        width:16% ;
+        margin-left: 2%;
+        color:rgb(46, 2, 2);
+    }
+    .show-coordinates{
+        display: none;
+    }
+    .todayWeather1{
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .oneDayWeatherParaA {
+       
+        width: 60%;
+        height: 1rem;
+        margin-left:20%;
+       
+    }
+    .oneDayWeatherParaB{color:rgb(6, 6, 82); font-style: oblique;}
+    
+    .one-day-weather{
+        width: 100%;
+        height: 35%;
+    }
+    .five-days-weather{
+        
+        width: 100%;
+        height: 60%;
+        
+        display: block;
+    }
+    .one-day-weather .svgStyleClass2{
+        width: 60%;
+        height: 20%;
+        margin-left: 20%;
+    }
+    
+    /* .floatSpan{
+    
+        float: left;
+        
+        width: 0px;
+        height: 70%;
+        background-image: radial-gradient(bisque, rgb(231, 197, 240));
+        border-radius: 4px;
+        border-style: none;
+        margin-left:1.4%;
+        margin-top: 20%;
+        opacity: 0;
+      transition: all 5s ease-in-out;
+    }  */
+    .floatSpanTransition{
+        opacity: 0.8;
+        
+        width: 18%;
+    }
+    
+    .floatSpan , .floatSpan2{
+        float: left;
+        
+        width: 0;
+        height: 55%;
+        
+        background-image: radial-gradient(bisque, rgb(231, 197, 240)); 
+        border-radius: 4px;
+        border-style: none;
+        margin-left:1.4%;
+        margin-top: 10%;
+        opacity: 0;
+      transition: all 7s ease-in-out;
+    }
+    .floatSpanTransition{
+        opacity: 0.8;
+        
+        width: 18%;
+    }
+    .oneMax{
+        position :absolute;
+        width:20%;
+        margin-left:35%;
+        padding-top: 8px;
+    }
+    .oneMin{
+        position: absolute;
+        width: 20%;
+        margin-left: 45%;
+        padding-top: 8px;
+    }
+    .fiveMax{}
+    .fiveMin{}
+    
+    .svgStyleClass{
+        width: 70%;
+        height: 25%;
+        margin-left: 15%;
+    } 
+    .descriptionPara{
+        text-align: center;
+        font-size: small;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-transform: capitalize;
+    }
     
 }
-.background-img{
-    position: absolute;
-    right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
+
+/* ********************* small computer screen CSS **************    */
+
+/*  media query for small screen laptops/pc >1024px/ 64em    */
+
+@media (max-width:64em){
+    .floatSpan{
+        height: 60%;
+        margin-top: 15%;
+    }
+    .oneMax{
+        position :absolute;
+        width:20%;
+        margin-left:35%;
+        padding-top: 8px;
+    }
+    .oneMin{
+        position: absolute;
+        width: 20%;
+        margin-left: 45%;
+        padding-top: 8px;
+    }
+
 }
 
-/*background video style */
-.background-clip {
+/*  ******** Tablet Screen 48em (768 px )  ********  */
+/* **************** Tablet (16 PX = 1EM )***************** */
+@media  (min-width:48em)and (max-width:63.99em){
 
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  
-  
- 
-}  
+    .background-img{
+        display: none;
+        opacity: 0;
+     }
+     .background-img img{
+        display: none;
+        opacity: 0;
+     }
+     .small-Screen-BG-img{
+         position:absolute;
+          width: 100%;
+          height:100vh;
+          display: block;
+     }
 
-.cloudsFullHD , .clearFullHD , .rainFullHD , .snowFullHD {
-    opacity: 0; 
-     position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    z-index: 0;
-    transition: 1s ease-in-out;
+
+    
 }
-@media (min-aspect-ratio: 16/9){
+
+
+
+
+/*  ********       phones >425px   ************/ 
+
+@media (max-width:26.62em){
+    .container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+   .main-header{
+    width: 100%;
+    height: 20%;
+   }
+   .main{
+    
+    width: 100%;
+    height: 100%;
+    border-bottom: 8px rgb(134, 162, 168);
+   }
+
+
+    .background-img{
+       display: none;
+       opacity: 0;
+    }
+    .background-img img{
+       display: none;
+       opacity: 0;
+    }
+    .small-Screen-BG-img{
+        position:absolute;
+         width: 100%;
+         height: 520px;
+         display: block;
+    }
+    .geo-location-btn{
+        background-color: none;
+        width: 50%;
+        margin-left: 25%;
+        padding: 6px;
+        height: 28%;
+        cursor: pointer;
+    }
+    .geo-location-btn:hover{
+        background-color: antiquewhite;
+        columns: rgb(17, 1, 1);
+        cursor:zoom-out;
+    }
+    .input-place{
+        width: 32%;
+        margin-left:25%;
+    }
+    .input-btn{
+        width:16% ;
+        margin-left: 2%;
+        color:rgb(46, 2, 2);
+    }
+    .show-coordinates{
+        display: none;
+    }
+    .todayWeather1{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .oneDayWeatherParaA {
+       
+        width: 60%;
+        height: 1rem;
+        margin-left:20%;
+       
+    }
+    .oneDayWeatherParaB{color:rgb(6, 6, 82); font-style: oblique;}
+
+    .one-day-weather{
+        width: 100%;
+        height: 35%;
+    }
+    .five-days-weather{
+        
+        width: 100%;
+        height: 60%;
+        
+        display: block;
+    }
+    .one-day-weather .svgStyleClass2{
+        width: 60%;
+        height: 20%;
+        margin-left: 20%;
+    }
+
+   
+    .floatSpanTransition{
+        opacity: 0.8;
+        
+        width: 18%;
+    }
+    
+    .floatSpan , .floatSpan2{
+        float: left;
+        
+        width: 0;
+        height: 55%;
+        
+        background-image: radial-gradient(bisque, rgb(231, 197, 240)); 
+        border-radius: 4px;
+        border-style: none;
+        margin-left:1.4%;
+        margin-top: 10%;
+        opacity: 0;
+      transition: all 7s ease-in-out;
+    }
+    .floatSpanTransition{
+        opacity: 0.8;
+        
+        width: 18%;
+    }
+    .oneMax{
+        position :absolute;
+        width:20%;
+        margin-left:35%;
+        padding-top: 8px;
+    }
+    .oneMin{
+        position: absolute;
+        width: 20%;
+        margin-left: 45%;
+        padding-top: 8px;
+    }
+    .fiveMax{}
+    .fiveMin{}
+
+    .svgStyleClass{
+        width: 70%;
+        height: 25%;
+        margin-left: 15%;
+    } 
+    .descriptionPara{
+        text-align: center;
+        font-size: small;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-transform: capitalize;
+    }
+}
+
+/* *****************for small screen phones >23.43rm (16 PX = 1EM )**********************  */
+/*    23.43 em = 375px      */
+
+@media (max-width:23.44em){
+    .main-header{
+        width: 100%;
+        height: 10%;
+    }
+    .main{
+        position: relative;
+        width: 100%;
+        height: 85%;
+        margin-top: 2%;
+    }
+    .geo-location-btn{
+        height: 50%;
+        text-align: center;
+        padding-bottom: 8px;
+    }
+    .location-span{
+        padding-bottom: 8px;
+    }
+    
+    .one-day-weather{
+       
+             
+             width: 100%;
+             height: 40%;
+             margin-top: .5rem;
+             opacity: 0.7;
+             
+         
+         }
+         .img-div{
+            position:relative;
+            width: 100%;
+            top:-25%;
+            height: 100%;
+         }
+         .svgStyleClass2{
+            position: relative;
+            width: 40%;
+            height: 100%;
+         }
+        .oneDayWeatherParaA{
+            z-index: 4;
+            margin-top: 10px;
+        }
+        /*
+         .oneDayWeatherParaC{
+            position: relative;
+            color:rgb(39, 3, 10);
+            font-weight: bold;
+            width: 40%;
+            height: 1rem;
+            margin-left:30%;
+            text-align: center;
+            margin-top:.5rem;
+            
+            z-index: 4;
+
+         }
+         */
+         .oneMin{
+            width: 20%;
+            margin-left: 1%;
+            padding-top: 1rem;
+            font-weight: bolder;
+        }
+         
+         
+         .five-days-weather{
+            
+            width: 100%;
+            height: 58%;
+            margin-top: 2%;
+            
+         }
+ }
+
+
+
+    /* ====================================================== */
+    /*
+    .background-img{
+        width: auto;
+        height: auto;
+        background-size: cover;
+        border-bottom: 8px rgb(96, 187, 230);
+    }
+    .floatSpan , .floatSpan2{
+        float: left;
+        
+        width: 0;
+        height: 60%;
+        
+        background-image: radial-gradient(bisque, rgb(231, 197, 240)); 
+        border-radius: 4px;
+        border-style: none;
+        margin-left:1%;
+        margin-top: 15%;
+        opacity: 0;
+      transition: all 3s ease-in-out;
+    }
+    .floatSpanTransition{
+        opacity: 0.8;
+        
+        width: 19%;
+    }
+    .input-btn{font-size: .75rem;}
+
+    .main-header{
+        width: 100%;
+        height: 10%;
+    }
+    .main{
+        position: relative;
+        width: 100%;
+        height: 85%;
+        margin-top: 2%;
+    }
+    
+    .one-day-weather{
+       
+             
+             width: 100%;
+             height: 40%;
+             margin-top: .5rem;
+             opacity: 0.7;
+             
+         
+         }
+         .img-div{
+            position:relative;
+            width: 100%;
+            top:-25%;
+            height: 100%;
+         }
+         .svgStyleClass2{
+            position: relative;
+            width: 40%;
+            height: 100%;
+         }
+        .oneDayWeatherParaA{
+            z-index: 4;
+            margin-top: 10px;
+        }
+        /*
+         .oneDayWeatherParaC{
+            position: relative;
+            color:rgb(39, 3, 10);
+            font-weight: bold;
+            width: 40%;
+            height: 1rem;
+            margin-left:30%;
+            text-align: center;
+            margin-top:.5rem;
+            
+            z-index: 4;
+
+         }
+         
+         .oneMin{
+            width: 20%;
+            margin-left: 1%;
+            padding-top: 1rem;
+            font-weight: bolder;
+        }
+         
+         
+         .five-days-weather{
+            
+            width: 100%;
+            height: 58%;
+            margin-top: 2%;
+            
+         }
+        */
+        /* for background video */
+/*
+  @media (min-aspect-ratio: 16/9){
     .background-clip{
         width: 100%;
         height: auto;
     }
 }
-@media (max-aspect-ratio: 16/9) {
+  @media (max-aspect-ratio: 16/9) {
     .background-clip{
         width: auto;
         height: 100%;
     }
 }
-.opacity1{opacity: 1;}
-.main-header{
-      position: relative;
-      
-      width: 100%;
-      height:20vh;
-      z-index:1;
-      
-}
-.geo-location-btn{
-          width: 20%;
-          height: 1.6rem;
-          border-radius: 4px;
-          border-style: none;
-          margin-left: 40%;
-          margin-top: 2%;
-          padding: 6px;
-          background-color: rgb(59, 48, 109);
-          color: white;
-          font-size: .8rem;
-          cursor: pointer;
-          word-spacing: 4px;
-          transition: .5s;
-         
-          
-}
-.geo-location-btn:hover{background-color: white;color:rgb(46, 10, 10);}
-.location-span{
-   
-   
-    font-size: 1rem;
-    color: rgb(187, 87, 87);
-    display: inline-block;
-    
-    margin-left: 5%;
-}
+*/
 
-.input-btn{
-    position:absolute;
-    width: 10%;
-    height: 1.8rem;
-    border-radius: 4px;
-    border-style: none;
-    background-color:rgb(69, 226, 226);
-    color: white;
-    margin-left: .5%;
-    margin-top: 2%;
-    cursor: pointer;
-    font-weight: bolder;
-    display: inline-block;
-}
-.input-btn:hover{background-color: aquamarine;color:rgb(37, 10, 10);}
-.input-place{
-     width: 20%;
-     height: 1.8rem;
-     background-color: aquamarine;
-     border-style: none;
-     outline: none;
-     margin-left: 33%;
-     margin-top: 2%;
-     display: inline-block;
-     text-align: center;
-     font-weight: bold;
-}
-.one-day-weather{
-    background-color: burlywood;
-    width: 100%;
-    height: 20vh;
     
-
-}
-.oneDayWeatherParaA , .oneDayWeatherParaB{
-    color:crimson;
-    font-size: .8rem;
-    font-weight: bold;
-    z-index: 0;
-}
-.one-day-weather img{
-    position: relative;
-    width: 40%;
-    height: 100%;
-    margin-left:30%;
-    margin-top: -2rem;
-    border: 2px solid red;
-    z-index: 2;
-}
-.five-days-weather{
- /* background-color: coral;  */
-  width: 100%;
-  height: 60vh;
-  margin-top: .5rem;
-  transition: 1s;
-}
-.five-days-weather img{
-    position: relative;
-    margin-top: 1rem;
-    
-}
-.floatSpan{
-    float: left;
-    width: 18%;
-    height: 90%;
-    background-color: aquamarine;
-    border-radius: 4px;
-    border-style: none;
-    margin-left:.5rem ;
-}
-.floatSpan2{
-    float: left;
-}
-.main-footer{
-    background-color: gray;
-    width: 100%;
-    height: 10rem;
-    margin-top: .5rem;
-}
-/*.svgStyleClass{
-    width: 50%;
-    height: auto;
-}  */
-
-.class0{
-    color:darkgreen;
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-.hideGeoLocationBtn{
-    opacity: 0;
-    display: none;
-}
-.hideInputPlace , .hideInputBtn{
-    opacity: 0;
-    display: none;
-}

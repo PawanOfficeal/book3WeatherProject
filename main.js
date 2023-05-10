@@ -28,6 +28,13 @@ geoLocationBtn.addEventListener("click",()=>{
     inputBtn.classList.add("hideInputBtn")
 })
 
+//hide geoLocation icon: 
+geoLocationBtn.addEventListener("click",()=>{
+    geoLocationBtn.classList.add("hideInputPlace")
+    geoLocationBtn.classList.add("hideGeoLocationBtn")
+    geoLocationBtn.classList.add("floatSpanTransition")
+})
+
 function getGeoLocation(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(success,failure)
@@ -69,21 +76,27 @@ function myCoordinates(latitude, longitude){
             console.log(data)
             console.log(data.list[0])
             oneDayWeather.innerHTML = `
-                                    <p>Today's Weather </p>
-                                    <p>${data.list[0].weather[0].main} </p>
+                        <p class="oneDayWeatherParaA todayWeather1">Today's Weather </p>
+                        <p class="oneDayWeatherParaA">${data.city.name}</p>
+                        <p class="oneDayWeatherParaB">${data.list[0].weather[0].main} </p>
                                     
-                            <img class="svgStyleClass" src="./bigSvg/${data.list[0].weather[0].main.toLowerCase()}.svg">
-                                    <p>Max-Temp ${(data.list[0].main.temp_max-273).toFixed(0)} &;</p>
-                                    <p>Min-Temp ${(data.list[0].main.temp_min-273).toFixed(0)} &;</p>
+            <div class="img-div">
+            <img class="svgStyleClass2" src="./weatherSvg/${data.list[0].weather[0].main.toLowerCase()}.svg">
+            </div>
+                    <span class="oneDayWeatherParaC oneMax">${(data.list[0].main.temp_max-273).toFixed(0)} &deg;C</span>
+                    <span class="oneDayWeatherParaC oneMin">${(data.list[0].main.temp_min-273).toFixed(0)} &deg;C</span>
                                                   
                                     `
+                                    oneDayWeather.classList.add('opacityAddOneDay')
                 //change background-img according to weather[0].main :
                 let clearFullHD = document.querySelector(".clearFullHD")
                 let cloudsFullHD = document.querySelector(".cloudsFullHD")
                   let rainFullHD = document.querySelector(".rainFullHD")
                 let snowFullHD = document.querySelector(".snowFullHD")
                 let BGLakeFullHD = document.querySelector(".BGLakeFullHD")
-               // let opacity1 = document.querySelector(".opacity1")
+               
+                //trying fix BG img issue:
+                
               
                //now im trying use Switch/Case to chnage BG:
                switch(data.list[0].weather[0].main){
@@ -121,15 +134,18 @@ function myCoordinates(latitude, longitude){
             //*************5 days weather:
             let _5Daysdiv = document.createElement("span")
                 _5Daysdiv.innerHTML = `
-                        <p>${day}</p>
+                        <p class="weekDayPara">${day}</p>
                         
-                        <img class="svgStyleClass" src="./bigSvg/${data.list[i].weather[0].main.toLowerCase()}.svg">
-                        <p>Max-Temp ${(data.list[i].main.temp_max-273).toFixed(0)} &;</p>
-                        <p>Min-Temp ${(data.list[i].main.temp_min-273).toFixed(0)} &;</p>
+                        <img class="svgStyleClass" src="./weatherSvg/${data.list[i].weather[0].main.toLowerCase()}.svg">
+                        <p class="tempPara fiveMax"> ${(data.list[i].main.temp_max-273).toFixed(0)} &deg;C</p>
+                        <p class="tempPara fiveMin"> ${(data.list[i].main.temp_min-273).toFixed(0)} &deg;C</p>
+                        <p class="descriptionPara">${data.list[i].weather[0].description}</p>
                                   
                 `
                 fiveDaysWeather.appendChild(_5Daysdiv)
                 _5Daysdiv.classList.add("floatSpan")
+
+                _5Daysdiv.classList.add("floatSpanTransition")
                
             }
             
@@ -145,14 +161,24 @@ function myCoordinates(latitude, longitude){
 /*=============================================*/
 
 inputBtn.addEventListener("click",inputBtnFunction)
-inputBtn.addEventListener("click",changeBgVideos)
+
+//inputBtn.addEventListener("click",changeBgVideos)
 inputBtn.addEventListener("click", ()=>{
     geoLocationBtn.classList.add("hideGeoLocationBtn")
 })
 
+//hide input and submit btn
+inputBtn.addEventListener("click", ()=>{
+    inputPlace.classList.add("hideInputPlace")
+    inputBtn.classList.add("hideInputBtn")
+    inputBtn.classList.add("floatSpanTransition")
+})
+
 function inputBtnFunction(){
     let cityName = document.getElementById("inputPlace").value
-    let URL2 = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${APIkey}`
+    let URL2 = `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIkey}`
+   /* let URL2 =  `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${APIkey}` */
+    /*        `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${APIkey}`  */
 
     fetch(URL2)
     .then(response=>{
@@ -164,13 +190,19 @@ function inputBtnFunction(){
 
         console.log(data.list[0])
             oneDayWeather.innerHTML = `
-                        <p class="oneDayWeatherParaA">Today's Weather </p>
-                        <img class="svgStyleClass" src="./bigSvg/${data.list[0].weather[0].main.toLowerCase()}.svg">
-                        <p class="oneDayWeatherParaB">${data.list[0].weather[0].main} </p>
-                        <p class="oneDayWeatherParaB">Max-Temp ${(data.list[0].main.temp_max-273).toFixed(0)} &;</p>
-                        <p class="oneDayWeatherParaB">Min-Temp ${(data.list[0].main.temp_min-273).toFixed(0)} &;</p>
-                                                  
+            <p class="oneDayWeatherParaA todayWeather1">Today's Weather </p>
+            <p class="oneDayWeatherParaA">${data.city.name}</p>
+            <p class="oneDayWeatherParaB">${data.list[0].weather[0].main} </p>
+             
+            <div class="img-div">
+            <img class="svgStyleClass2" src="./weatherSvg/${data.list[0].weather[0].main.toLowerCase()}.svg">
+            </div>
+            <span class="oneDayWeatherParaC oneMax">${(data.list[0].main.temp_max-273).toFixed(0)} &deg;C</span>
+            <span class="oneDayWeatherParaC oneMin">${(data.list[0].main.temp_min-273).toFixed(0)} &deg;C</span>
+                                      
                                     `
+
+                                    oneDayWeather.classList.add('opacityAddOneDay')
                 
             
              //now im trying use Switch/Case to chnage BG:
@@ -186,6 +218,9 @@ function inputBtnFunction(){
                 break;
                 case "Snow": 
                 snowFullHD.classList.add('opacity1')
+                break;
+                case "Thunder": 
+                clearFullHD.classList.add('opacity1')
                 break;
                 default: 
                 BGLakeFullHD.classList.add('opacity1')
@@ -210,14 +245,16 @@ function inputBtnFunction(){
             //*************5 days weather:
             let _5Daysdiv = document.createElement("span")
                 _5Daysdiv.innerHTML = `
-                        <p>${day}</p>
-                        <img class="svgStyleClass" src="./bigSvg/${data.list[i].weather[0].main.toLowerCase()}.svg">
-                        <p>Max-Temp ${(data.list[i].main.temp_max-273).toFixed(0)} &;</p>
-                        <p>Min-Temp ${(data.list[i].main.temp_min-273).toFixed(0)} &;</p>
-                                  
+                        <p class="weekDayPara">${day}</p>
+                        <img class="svgStyleClass" src="./weatherSvg/${data.list[i].weather[0].main.toLowerCase()}.svg">
+                        <p class="tempPara fiveMax"> ${(data.list[i].main.temp_max-273).toFixed(0)}&deg;C</p>
+                        <p class="tempPara fiveMin"> ${(data.list[i].main.temp_min-273).toFixed(0)}&deg;C</p>
+                        <p class="descriptionPara">${data.list[i].weather[0].description}</p>         
                 `
                 fiveDaysWeather.appendChild(_5Daysdiv)
                 _5Daysdiv.classList.add("floatSpan2")
+
+                _5Daysdiv.classList.add("floatSpanTransition")
                
             }
             
@@ -229,7 +266,8 @@ function inputBtnFunction(){
 
  //changing video bg in one-day weather div
                 //change background-img according to weather[0].main :
-function changeBgVideos(){
+/*
+                function changeBgVideos(){
                 let cityName = document.getElementById("inputPlace").value
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${APIkey}`
     )
@@ -245,3 +283,7 @@ function changeBgVideos(){
     } )
             
 }
+
+*/
+
+
