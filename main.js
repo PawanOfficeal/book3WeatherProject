@@ -76,7 +76,7 @@ function myCoordinates(latitude, longitude){
             console.log(data)
             console.log(data.list[0])
             oneDayWeather.innerHTML = `
-                        <p class="oneDayWeatherParaA todayWeather1">Today's Weather </p>
+                        <p class="todayWeather1">Today's Weather </p>
                         <p class="oneDayWeatherParaA">${data.city.name}</p>
                         <p class="oneDayWeatherParaB">${data.list[0].weather[0].main} </p>
                                     
@@ -190,7 +190,7 @@ function inputBtnFunction(){
 
         console.log(data.list[0])
             oneDayWeather.innerHTML = `
-            <p class="oneDayWeatherParaA todayWeather1">Today's Weather </p>
+            <p class="todayWeather1">Today's Weather </p>
             <p class="oneDayWeatherParaA">${data.city.name}</p>
             <p class="oneDayWeatherParaB">${data.list[0].weather[0].main} </p>
              
