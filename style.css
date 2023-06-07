@@ -228,9 +228,11 @@
      /* background-color: coral;  */
      position: absolute;
       width: 100%;
-      height: 59%;
+      /*height: 59%;*/
+      height: 55%;
       margin-top: 1%;
-      bottom: 20%;
+     /* bottom: 20%;  */
+     bottom: 30%;
       transition: 1s;
     }
     .five-days-weather img{
@@ -631,9 +633,122 @@
 
 }
 
+/*  max : 744 px */
+
+@media (max-width:48em){
+    .geo-location-btn{
+        width: 30%;
+        margin-left: 35%;
+        font-size: .8REM;
+    }
+    .input-place{
+        width: 20%;
+        margin-left: 35%;
+    }
+    .input-btn{
+        width: 10%;
+    }
+    .five-days-weather{
+        bottom: 2rem;
+    }
+    .oneMax{
+        position :absolute;
+        width:20%;
+        margin-left:35%;
+        font-size: 1rem;
+        color:red;
+        word-spacing: 2px;
+        top: 40%;
+        padding-top: 8px;
+    }
+    .oneMin{
+        position: absolute;
+        width: 20%;
+        margin-left: 45%;
+        font-size: 1rem;
+        color:blue;
+        word-spacing: 4px;
+        top:40%;
+        padding-top: 8px;
+    } 
+    .fiveMax{
+        position :absolute;
+        width:40%;
+        margin-left:10%;
+        font-size: .8rem;
+        color:red;
+        word-spacing: 2px;
+        top: 50%;
+        padding-top: 8px;
+    }
+    .fiveMin{
+        position: absolute;
+        width: 40%;
+        margin-left: 60%;
+        font-size: .8rem;
+        color:blue;
+        word-spacing: 4px;
+        top:50%;
+        padding-top: 8px;
+    }
+    .weekDayPara{
+        font-size: 1.2rem;
+    }
+    
+    .descriptionPara{
+        margin-top: 1.4rem;
+        font-size: .8rem;
+    }
+    .svgStyleClass{
+        width: 70%;
+        height: 2.5rem;
+        margin-left: 15%;
+    } 
+    /*.svgStyleClass img{
+       
+        height: 4rem;
+    } */
+    .floatSpan{
+        position: relative;
+        float: left;
+        width: 16%;
+        height: 50%;
+        background-image: radial-gradient(bisque, rgb(231, 197, 240));
+        border-radius: 4px;
+        border-style: none;
+        margin-left:3.2%;
+        margin-top: 20%;
+        bottom: 10%;
+        /*bottom: 5%;*/
+        padding-bottom: 6rem;
+        opacity: 0;
+        transition: all 3s ease-in-out;
+    }
+    
+    .floatSpan2{
+        position: relative;
+        float: left;
+        width: 16%;
+        height: 50%;
+        background-image: radial-gradient(bisque, rgb(231, 197, 240));
+        border-radius: 4px;
+        border-style: none;
+        margin-left:3.2%;
+        margin-top: 20%;
+        bottom: 10%;
+        /*bottom: 5%;*/
+        padding-bottom: 6rem;
+        opacity: 0;
+        transition: all 3s ease-in-out;
+    }
+    .floatSpanTransition{
+        opacity: 0.8;
+    }
+}
+
 /*  ******** Tablet Screen 48em (768 px )  ********  */
 /* **************** Tablet (16 PX = 1EM )***************** */
-@media  (min-width:48em)and (max-width:63.99em){
+@media  (min-width:47.50em)and (max-width:63.99em){
     .geo-location-btn{
         width: 25%;
         height: 1.6rem;
@@ -713,7 +828,7 @@
         width:20%;
         margin-left:35%;
         font-size: 1rem;
-        color:rgb(71, 2, 2);
+        color:red;
         word-spacing: 4px;
         top: 40%;
         padding-top: 8px;
@@ -723,7 +838,7 @@
         width: 20%;
         margin-left: 45%;
         font-size: 1rem;
-        color:rgb(71, 2, 2);
+        color:blueviolet;
         word-spacing: 4px;
         top:40%;
         padding-top: 8px;
@@ -733,6 +848,7 @@
         position: absolute;
         font-size: .8rem;
         top:60%;
+        color:blue;
         margin-left: 10%;
         
     }
@@ -952,6 +1068,7 @@
         position: absolute;
         width: 20%;
         top:60%;
+        color:blue;
         font-size: .8rem;
         margin-left: 55%;
         padding-top: 8px;
@@ -960,10 +1077,13 @@
         color:red;
         font-size: .7rem;
         margin-left: 7%;
+        width: 1.4rem;
     }
     .fiveMin{
         font-size: .7rem;
         margin-left: 55%;
+        color:blue;
+        width: 1.4rem;
     }
 
     .svgStyleClass{
@@ -989,6 +1109,7 @@
         font-size: small;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-transform: capitalize;
+        margin-top: 3rem;
     }
 }
 
